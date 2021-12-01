@@ -1,15 +1,26 @@
 /* Btn
 ------------------------ */
 .btn {
-    &--clean {
-        border: 0;
-        border: none;
-        background-color: transparent;
-        background: transparent;
-        padding: 0;
-    }
-    &__cart {}
-    &__pink {
-       @extend %button-red;
-    }
- }
+  width: 181px;
+  height: 52px;
+  left: 237px;
+  top: 1601px;
+  background: #00B4A9;
+  border-radius: 19px;
+
+  font-family: $font-family-heading;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #FFFFFF;
+
+  &--primary {
+    background: #00B4A9;
+    color: #FFFFFF;
+  }
+  &__pink {
+    @extend %button-red;
+  }
+}

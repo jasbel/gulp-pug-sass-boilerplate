@@ -1,0 +1,56 @@
+.main {
+  position: relative;
+  padding-top: 170px;
+  &::before {
+    content:url('../images/curve.png'); /* with class ModalCarrot ??*/
+    position:absolute; /*or absolute*/
+    z-index:10; /*a number that's more than the modal box*/
+    left:0;
+    right: 0;
+    top:-170px;
+    width: 100%;
+  }
+}
+
+.tyMain {
+}
+
+.tkOnlyImage {
+  img {
+    width: 100%;
+  }
+}
+
+.tkTarget {
+  
+  width: 294px;
+  height: 397px;
+  background: #FFFFFF;
+  border-radius: 65px;
+  overflow: hidden;
+
+  &__wrap {
+    background: linear-gradient(180deg, #364579 0%, #31315D 31.77%, #2B1E42 61.98%);
+    padding-top: 140px;
+    padding-bottom: 146px;
+  }
+
+  &__imageWrap {
+    height: 168px;
+    background: linear-gradient(180deg, #37977C 0%, #327C79 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__contentWrap {
+    padding: 35px 30px 25px;
+  }
+  &__description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+  }
+}

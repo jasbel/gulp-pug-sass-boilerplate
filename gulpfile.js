@@ -15,13 +15,13 @@ function html() {
     .pipe(dest('dist'))
 }
 
-// Compile sass files into CSS
+// Compile scss files into CSS
 function styles() {
   return src('src/scss/styles.scss')
     .pipe(sass({
       includePaths: ['src/scss'],
       errLogToConsole: true,
-      outputStyle: 'compressed',
+      // outputStyle: 'compressed',
       onError: browserSync.notify
     }))
     .pipe(dest('dist/css'))
@@ -34,13 +34,13 @@ function assets() {
     .pipe(dest('dist/'))
 }
 
-// Serve and watch sass/pug files for changes
+// Serve and watch scss/pug files for changes
 function watchAndServe() {
   browserSync.init({
     server: 'dist',
   })
 
-  watch('src/sass/**/*.sass', styles)
+  watch('src/scss/**/*.scss', styles)
   // watch('src/pug/*.pug', html)
   watch('src/html/**/*.html', html)
   watch('src/assets/**/*', assets)
