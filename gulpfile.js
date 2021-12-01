@@ -8,16 +8,18 @@ const browserSync = require('browser-sync').create()
 
 // Compile pug files into HTML
 function html() {
-  return src('src/pug/*.pug')
-    .pipe(pug())
+  // return src('src/pug/*.pug')
+  //   .pipe(pug())
+  //   .pipe(dest('dist'))
+  return src('src/html/**/*.html')
     .pipe(dest('dist'))
 }
 
 // Compile sass files into CSS
 function styles() {
-  return src('src/sass/main.sass')
+  return src('src/scss/styles.scss')
     .pipe(sass({
-      includePaths: ['src/sass'],
+      includePaths: ['src/scss'],
       errLogToConsole: true,
       outputStyle: 'compressed',
       onError: browserSync.notify
@@ -39,7 +41,8 @@ function watchAndServe() {
   })
 
   watch('src/sass/**/*.sass', styles)
-  watch('src/pug/*.pug', html)
+  // watch('src/pug/*.pug', html)
+  watch('src/html/**/*.html', html)
   watch('src/assets/**/*', assets)
   watch('dist/*.html').on('change', browserSync.reload)
 }

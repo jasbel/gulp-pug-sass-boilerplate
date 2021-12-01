@@ -1,0 +1,36 @@
+/*  Hero
+-----------------*/
+.hero {
+    background-image: url(../images/hero.png);
+    color: var(--color-white);
+    min-height: 818px;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 0;
+
+    &__image-content {
+        display: flex;
+        margin-bottom: 100px;
+    }
+    &__image {
+        flex: auto;
+        width: 200px;
+    }
+    &__content {
+    }
+    &__title {
+        @include responsive(fz, 48, 40);
+        margin-bottom: 26px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__subtitle {
+        @include responsive(fz,30);
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__description {
+        font-size: 18px;
+    }
+}
